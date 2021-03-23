@@ -76,10 +76,32 @@ const createDrillBank = () => {
     skillDrills.push(speedSkill);
     const basicStretch = drillFactory('Basic Stretching Drill', 'Skill', [9, 1], 90, 'Stretch fingers 2, 3, and 4 by 1 fret each.');
     skillDrills.push(basicStretch);
-    const advanceStretch = drillFactory('Advance Stretching Drill', 'Skill', [9, 1], 90, 'Stretch fingers 2, 3, and 4, by 2 frets each.')
+    const advanceStretch = drillFactory('Advance Stretching Drill', 'Skill', [9, 1], 90, 'Stretch fingers 2, 3, and 4, by 2 frets each.');
     skillDrills.push(advanceStretch);
-    const cagedRoots = drillFactory('CAGED Roots Drill', 'Skill', [0, 15], 120, 'Cycle through the cycle of fourths and find all the root notes, using the CAGED shapes.');
+    const cagedRoots = drillFactory('CAGED Roots Drill', 'Skill', [0, 15], 120, 'Cycle through the circle of fourths and find all the root notes using the CAGED shapes.');
+    skillDrills.push(cagedRoots);
+
+    const majArpeggio = drillFactory('Major Arpeggio Drill', 'Chord', [0, 15], 120, 'Cycle through the circle of fourths and map all the major arpeggios of every root', null, 'Maj');
+    chordDrills.push(majArpeggio);
+    const minArpeggio = drillFactory('Minor Arpeggio Drill', 'Chord', [0, 15], 120, 'Cycle through the circle of fourths and map all the minor arpeggios of every root', null, 'Min');
+    chordDrills.push(minArpeggio);
+    const majTriad = drillFactory('Major Triads Drill', 'Chord', [0,15], 120, 'Cycle through the major triads using the circle of fourths.', null, 'Closed Maj');
+    chordDrills.push(majTriad);
+    const minTriad = drillFactory('Minor Triads Drill', 'Chord', [0,15], 120, 'Cycle through the minor triads using the circle of fourths.', null, 'Closed Min');
+    chordDrills.push(minTriad);
+
+    const majPentatonic = drillFactory('Major Pentatonic Drill', 'Scale', [0, 15], 120, 'Cycle through the circle of fourths and do the major pentatonic scale for every root.', 2);
+    scaleDrills.push(majPentatonic);
+    const minPentatonic = drillFactory('Minor Pentatonic Drill', 'Scale', [0, 15], 120, 'Cycle through the circle of fourths and do the minor pentatonic scale for every root.', 2);
+    scaleDrills.push(minPentatonic);
+    const majScale = drillFactory('Major Scale Drill', 'Scale', [0, 15], 120, 'Cycle through the circle of fourths and do the major scale for every root.', 2);
+    scaleDrills.push(majScale);
+    const minScale = drillFactory('Minor Scale Drill', 'Scale', [0, 15], 120, 'Cycle through the circle of fourths and do the natural minor scale for every root.', 2);
+    scaleDrills.push(minScale);
 }
  
 createDrillBank();
-console.log(standardDrills);
+standardDrills.forEach(drill => drill.printDrill());
+skillDrills.forEach(drill => drill.printDrill());
+chordDrills.forEach(drill => drill.printDrill());
+scaleDrills.forEach(drill => drill.printDrill());
