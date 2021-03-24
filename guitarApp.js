@@ -155,7 +155,6 @@ const printRoutine = () => {
 
 const appStartUp = () => {
     console.log('Hello! Welcome to the guitar routine generator!');
-    
     const prompt = require('prompt-sync')({sigint: true});
     let ans;
     do {

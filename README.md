@@ -26,16 +26,16 @@ Describe how to install / setup your local environement / add link to demo versi
 
 ## Features
 * Generates a 7 part guitar routine. 
-* Routines can be stored in single day format or for multiple days. 
-* Multiple day routines would ensure that drill repeats are minimal.
-* Some drill parameters can be modified. 
-
+ 
 ### Future Development
+* Incorporate routine generation for multiple days. 
+* Allow for some drill parameters to be modified :  range, tempo, intervals, and chords. 
 * Add functionality to accept adding more drills to the drill library.
+* Create function for rerunning the app. 
 * Incorporate with HTML and CSS to become a full web app.
 
 ## Status
-Project is: _in progress. Beginning this 23rd of March, 2021. 
+Project is: Codecademy scope completed: March 24, 2021. Future updates would be on hold until actual portfolio building. 
 
 ## Inspiration
 The project is a variation of the mixed messages portfolio project of codecademy. 
@@ -44,9 +44,7 @@ The project is a variation of the mixed messages portfolio project of codecademy
 * [x] Create drill factory containing all the necessary drill details. 
 * [x] Generate drill library - populate drill objects.
 * [x] Create randomizer function for single day routine. 
-* Create function for multiple days - incorporate exclusive handlers, store in week routine array
-* Add drill modification features - i.e change tempo, change chord scope
-* Create console interface
-* Create function for rerunning the app. 
+* [x] Create basic console interface. 
+
 
 
