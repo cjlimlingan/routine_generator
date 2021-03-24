@@ -43,7 +43,7 @@ The project is a variation of the mixed messages portfolio project of codecademy
 ## To-do list
 * [x] Create drill factory containing all the necessary drill details. 
 * [x] Generate drill library - populate drill objects.
-* Create randomizer function for single day routine. 
+* [x] Create randomizer function for single day routine. 
 * Create function for multiple days - incorporate exclusive handlers, store in week routine array
 * Add drill modification features - i.e change tempo, change chord scope
 * Create console interface

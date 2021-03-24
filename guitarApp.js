@@ -153,4 +153,19 @@ const printRoutine = () => {
     routine.forEach(drill => drill.printDrill());
 }
 
-printRoutine();
+const appStartUp = () => {
+    console.log('Hello! Welcome to the guitar routine generator!');
+    
+    const prompt = require('prompt-sync')({sigint: true});
+    let ans;
+    do {
+        ans = prompt('Would you like to generate a routine? y/n : ');
+        if(ans.toLowerCase() !== 'y' && ans.toLowerCase() !== 'n') console.log('Invalid Input');   
+    
+    } while(ans.toLowerCase() !== 'y' && ans.toLowerCase() !== 'n');
+
+    if(ans.toLowerCase() === 'y') printRoutine();
+    else console.log('Okay, Bye!');
+}
+
+appStartUp();
