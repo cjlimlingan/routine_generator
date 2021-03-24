@@ -99,9 +99,52 @@ const createDrillBank = () => {
     const minScale = drillFactory('Minor Scale Drill', 'Scale', [0, 15], 120, 'Cycle through the circle of fourths and do the natural minor scale for every root.', 2);
     scaleDrills.push(minScale);
 }
- 
+
+const printDrillBank = () => {
+    standardDrills.forEach(drill => drill.printDrill());
+    skillDrills.forEach(drill => drill.printDrill());
+    chordDrills.forEach(drill => drill.printDrill());
+    scaleDrills.forEach(drill => drill.printDrill());
+}
+
+const randomNumber = drillType => {
+    if(drillType === 'standard') return Math.floor(Math.random()*3);
+    else {
+        const drillPair = [];
+        do {
+            const drill = Math.floor(Math.random()*4);
+            if(!drillPair.includes(drill)) drillPair.push(drill);
+        }while(drillPair.length<2)
+
+        return drillPair;
+    }
+}
+
+const generateSingleRoutine = () => {
+    const routine = [];
+    
+    //Randomly select 7 drills, 1 standard drill, 2 skill drills, 2 chord drills, and 2 scale drills. 
+    //Standard Drill
+    const standardDrill = randomNumber('standard');
+    routine.push(standardDrills[standardDrill]);
+    
+    //Skill Drills
+    const skillDrill = randomNumber('skill');
+    routine.push(skillDrills[skillDrill[0]]);
+    routine.push(skillDrills[skillDrill[1]]);
+
+    //Chord Drills
+    const chordDrill = randomNumber('chord');
+    routine.push(chordDrills[chordDrill[0]]);
+    routine.push(chordDrills[chordDrill[1]]);
+
+    //Scale Drills
+    const scaleDrill = randomNumber('scale');
+    routine.push(scaleDrills[scaleDrill[0]]);
+    routine.push(scaleDrills[scaleDrill[1]]);
+
+    return routine;
+}
+
 createDrillBank();
-standardDrills.forEach(drill => drill.printDrill());
-skillDrills.forEach(drill => drill.printDrill());
-chordDrills.forEach(drill => drill.printDrill());
-scaleDrills.forEach(drill => drill.printDrill());
+generateSingleRoutine();
