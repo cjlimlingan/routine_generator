@@ -100,6 +100,8 @@ const createDrillBank = () => {
     scaleDrills.push(minScale);
 }
 
+createDrillBank();
+
 const printDrillBank = () => {
     standardDrills.forEach(drill => drill.printDrill());
     skillDrills.forEach(drill => drill.printDrill());
@@ -146,5 +148,9 @@ const generateSingleRoutine = () => {
     return routine;
 }
 
-createDrillBank();
-generateSingleRoutine();
+const printRoutine = () => {
+    const routine = generateSingleRoutine();
+    routine.forEach(drill => drill.printDrill());
+}
+
+printRoutine();
